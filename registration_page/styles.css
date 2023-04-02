@@ -1,0 +1,177 @@
+:root {
+	--accent: #ff9f00;
+	--btnAccent: #ffc464;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: "Ubuntu", sans-serif;
+}
+
+#main {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+#header {
+	color: #ffffff;
+	font-size: 1.8rem;
+	letter-spacing: 2px;
+}
+input {
+	width: 100%;
+	height: 100%;
+	/* padding: 10px; */
+	font-size: 1rem;
+	text-align: center;
+	transition: 0.3s;
+	border-radius: 10px;
+	border: none;
+}
+.logo {
+	font-family: "Fraunces";
+	font-size: 3.2rem;
+	font-weight: 300;
+	color: rgb(55, 55, 55);
+	letter-spacing: 4px;
+}
+#a1 {
+	font-size: 4.5rem;
+	font-weight: 900;
+	color: var(--accent);
+}
+#card {
+	height: 600px;
+	width: 60%;
+	max-width: 1200px;
+	min-width: 800px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(255, 255, 255);
+	border-radius: 30px;
+	box-shadow: 31px 31px 34px #d0d0d0, -31px -31px 34px #ffffff;
+	overflow: hidden;
+	background-image: linear-gradient(
+			90deg,
+			rgba(255, 255, 255, 0.669),
+			rgba(255, 255, 255, 0.427)
+		),
+		url("./4858838.jpg");
+	background-position: center;
+	background-size: cover;
+}
+#name {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+}
+#section-1,
+#section-2 {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 50px;
+}
+#section-2 {
+	background-color: var(--accent);
+	border-radius: 30px 0 0 30px;
+}
+#login-form {
+	height: 80%;
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+}
+.disclaimer {
+	font-size: 0.7rem;
+	color: azure;
+}
+.disclaimer a {
+	color: white;
+}
+/* Login button */
+.cta {
+	position: relative;
+	margin-top: auto;
+	padding: 12px 18px;
+	transition: all 0.2s ease;
+	border: none;
+	background: #ffffff;
+	border-radius: 50px;
+	box-shadow: 8px 5px 12px 1px #0c0c0c32;
+}
+
+.cta:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	border-radius: 50px;
+	/* background: var(--accent); */
+	width: 45px;
+	height: 45px;
+	transition: all 0.3s ease;
+}
+
+.cta span {
+	position: relative;
+	font-family: "Ubuntu", sans-serif;
+	font-size: 18px;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	color: #234567;
+}
+
+.cta svg {
+	position: relative;
+	top: 0;
+	margin-left: 10px;
+	fill: none;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke: #234567;
+	stroke-width: 2;
+	transform: translateX(-5px);
+	transition: all 0.3s ease;
+}
+
+.cta:hover:before {
+	width: 100%;
+	background: var(--btnAccent);
+}
+
+.cta:hover svg {
+	transform: translateX(0);
+	stroke: white;
+}
+
+.cta:active {
+	transform: scale(0.95);
+}
+.cta:hover span {
+	color: #ffffff;
+}
+.cta:hover {
+	cursor: pointer;
+}
+

@@ -20,35 +20,53 @@
 				</section>
 				<section id="section-2">
 					<form id="login-form" action="submit" method="post">
-						<h1 id="header">Login</h1>
-
+						<h1 id="header">Register your account</h1>
+						<section id="name">
+							<input
+								type="text"
+								name="fname"
+								id="fname"
+								placeholder="First Name*"
+								required
+							/>
+							<input
+								type="text"
+								name="lname"
+								id="lname"
+								placeholder="Last Name*"
+								required
+							/>
+						</section>
 						<input
 							type="text"
-							name="name"
-							id="name"
-							placeholder="Username"
+							name="username"
+							id="username"
+							placeholder="Username*"
 							required
 						/>
-
+						<input
+							type="email"
+							name="email"
+							id="email"
+							placeholder="Email*"
+							required
+						/>
 						<input
 							type="text"
 							name="pass"
 							id="pass"
-							placeholder="Password"
+							placeholder="Password*"
 							required
 						/>
 						<button class="cta" type="submit">
-							<span>Login</span>
+							<span>Register</span>
 							<svg viewBox="0 0 13 10" height="10px" width="15px">
 								<path d="M1,5 L11,5"></path>
 								<polyline points="8 1 12 5 8 9"></polyline>
 							</svg>
 						</button>
 						<p class="disclaimer">
-							Not a member?
-							<a href="../registration_page/index.html"
-								>Register as a creator</a
-							>
+							Already a member? <a href="../login_page/index.html">Login</a>
 						</p>
 					</form>
 				</section>
