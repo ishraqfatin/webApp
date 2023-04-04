@@ -1,176 +1,177 @@
-@import url('https://fonts.googleapis.com/css2?family=Bona+Nova:wght@400;700&family=Poppins:wght@200;300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bona+Nova:wght@400;700&family=Poppins:wght@200;300&display=swap");
 
+:root {
+	--accent: #ff9d00;
+	--btnAccent: #ffb53f;
+}
 * {
-    font-family: 'Bona Nova', serif;
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #172337;
-    transition: all ease 0.3s;
+	font-family: "Bona Nova", serif;
+	font-family: "Poppins", sans-serif;
+	margin: 0;
+	padding: 0;
+	color: #172337;
+	transition: all ease 0.3s;
 }
 
 button {
-    cursor: pointer;
+	cursor: pointer;
 }
 
 button:hover {
-    transform: translateY(-4px);
+	transform: translateY(-4px);
 }
 
 :root {
-    --color1: #ff9f00;
-    --border: #172337;
-    --bg-btn: #232c3b;
+	--color1: #ff9f00;
+	--border: #172337;
+	--bg-btn: #232c3b;
 }
 
 .body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
 
-    margin: auto;
+	margin: auto;
 }
 
 li {
-    list-style-type: none;
+	list-style-type: none;
 }
 
 .font-12 {
-    font-size: 12px;
+	font-size: 12px;
 }
 
 .font-14 {
-    font-size: 14px;
+	font-size: 14px;
 }
 
 .font-16 {
-    font-size: 16px;
+	font-size: 16px;
 }
 
 .font-18 {
-    font-size: 18px;
+	font-size: 18px;
 }
 
 .font-20 {
-    font-size: 20px;
+	font-size: 20px;
 }
 
 .font-22 {
-    font-size: 22px;
+	font-size: 22px;
 }
 
 .d-flex {
-    display: flex;
+	display: flex;
 }
 
 .align-center {
-    align-items: center;
+	align-items: center;
 }
 
 .justify-space {
-    justify-content: space-between;
+	justify-content: space-between;
 }
 
 .nav_logo h2 {
-    padding-left: 100px;
+	padding-left: 100px;
 }
 
 nav {
-    width: 100%;
-    height: 60px;
-    background: var(--color1);
-    align-items: center;
-    display: flex;
-
+	width: 100%;
+	height: 60px;
+	background: var(--color1);
+	align-items: center;
+	display: flex;
 }
 
 .navbar {
-    padding-left: 18px;
-    width: 1500px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 15% 65% 20%;
+	padding-left: 18px;
+	width: 1500px;
+	margin: auto;
+	display: grid;
+	grid-template-columns: 15% 65% 20%;
 }
 
 .input_search {
-    display: none;
-    padding: 8px 10px;
-    border: 1px solid #ccc;
-    max-width: 425px;
-    background: #fff;
-    border-radius: 50px;
+	display: none;
+	padding: 8px 10px;
+	border: 1px solid #ccc;
+	max-width: 425px;
+	background: #fff;
+	border-radius: 50px;
 }
 
 .input_search input {
-    width: 100%;
-    border: none;
-    outline: none;
+	width: 100%;
+	border: none;
+	outline: none;
 }
 
 .nav_li {
-    width: 100%;
-    min-width: 650px;
-    padding-left: 300px;
+	width: 100%;
+	min-width: 650px;
+	padding-left: 300px;
 }
 
 .nav_li ul {
-    margin: auto;
-    width: 100%;
-    min-width: 650px;
-
+	margin: auto;
+	width: 100%;
+	min-width: 650px;
 }
 
 .nav_li ul li:hover {
-    transform: translateY(-4px);
+	transform: translateY(-4px);
 }
 
 .nav_li ul li a {
-    text-decoration: none;
-    margin: 0 20px;
-    font-size: 16px;
+	text-decoration: none;
+	margin: 0 20px;
+	font-size: 16px;
 }
 
 #search {
-    font-size: 18px;
-    display: inline-flex;
-    background: #fff;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    align-items: center;
-    justify-content: center;
-
+	font-size: 18px;
+	display: inline-flex;
+	background: #fff;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	align-items: center;
+	justify-content: center;
 }
 
 .nav_btn button {
-    font-weight: 900;
-    padding: 3px 20px;
-    background: var(--bg-btn);
-    border: 1.5px solid white;
-    color: #fff;
-    margin-left: 10px;
-    margin-top: 6px;
-    border-radius: 10px;
+	font-weight: 900;
+	padding: 3px 20px;
+	background: var(--bg-btn);
+	border: 1.5px solid white;
+	color: #fff;
+	margin-left: 10px;
+	margin-top: 6px;
+	border-radius: 10px;
 }
 
 .nav_btn button:first-child {
-    background: transparent;
-    color: #172337;
+	background: transparent;
+	color: #172337;
 }
 
 .inner h2 {
-    padding-top: 100px;
-    padding-left: 100px;
-    font-size: 45px;
-    color: var(--color1);
-    text-shadow: 1px 1px 1px;
+	padding-top: 100px;
+	padding-left: 100px;
+	font-size: 45px;
+	color: var(--color1);
+	text-shadow: 1px 1px 1px;
 }
 
 .inner p {
-    padding-left: 100px;
-    width: 40%;
-    font-weight: 600;
+	padding-left: 100px;
+	width: 40%;
+	font-weight: 600;
 }
 
 /*
@@ -197,44 +198,110 @@ nav {
 */
 
 img {
-    max-width: 320px;
-    float: left;
-    border-radius: 10px;
-    margin-right: 15px;
+	max-width: 320px;
+	float: left;
+	border-radius: 10px;
+	margin-right: 15px;
 }
 
 .wrapper {
-    margin: 150px auto;
-    width: 70%;
-
+	margin: 150px auto;
+	width: 70%;
 }
 
 .text-box h2 {
-    font-size: 45px;
-    color: var(--color1);
-    text-shadow: 1px 1px 1px;
+	font-size: 45px;
+	color: var(--color1);
+	text-shadow: 1px 1px 1px;
 }
 
 .wrapperFI {
-    margin: 150px auto;
-    width: 70%;
-
+	margin: 150px auto;
+	width: 70%;
 }
 
 .text-boxFI h2 {
-    font-size: 45px;
-    color: var(--color1);
-    text-shadow: 1px 1px 1px;
+	font-size: 45px;
+	color: var(--color1);
+	text-shadow: 1px 1px 1px;
 }
 
 .wrapperA {
-    margin: 150px auto;
-    width: 70%;
-
+	margin: 150px auto;
+	width: 70%;
 }
 
 .text-boxA h2 {
-    font-size: 45px;
-    color: var(--color1);
-    text-shadow: 1px 1px 1px;
+	font-size: 45px;
+	color: var(--color1);
+	text-shadow: 1px 1px 1px;
+}
+
+/* Home button */
+.cta {
+	/* position: fixed; */
+	/* bottom: 100px; */
+	/* right: 100px; */
+	margin-top: auto;
+	padding: 12px 18px;
+	transition: all 0.2s ease;
+	border: none;
+	background: #ffffff;
+	border-radius: 50px;
+	box-shadow: 8px 5px 12px 1px #0c0c0c32;
+}
+
+.cta:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	border-radius: 50px;
+	/* background: var(--accent); */
+	width: 45px;
+	height: 45px;
+	transition: all 0.3s ease;
+}
+
+.cta span {
+	position: relative;
+	font-family: "Ubuntu", sans-serif;
+	font-size: 18px;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	color: #234567;
+}
+
+.cta svg {
+	position: relative;
+	top: 0;
+	margin-left: 10px;
+	fill: none;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke: #234567;
+	stroke-width: 2;
+	transform: translateX(-5px);
+	transition: all 0.3s ease;
+}
+
+.cta:hover:before {
+	width: 100%;
+	background: var(--accent);
+}
+
+.cta:hover svg {
+	transform: translateX(0);
+	stroke: white;
+}
+
+.cta:active {
+	transform: scale(0.95);
+}
+.cta:hover span {
+	color: #ffffff;
+}
+.cta:hover {
+	cursor: pointer;
 }
