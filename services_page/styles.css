@@ -1,0 +1,152 @@
+:root {
+	--accent: #ff9d00;
+	--btnAccent: #ffb53f;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: "Bona Nova", serif;
+
+	padding: 50px;
+}
+.main {
+	width: 100%;
+	height: 100%;
+	/* padding: 20px; */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 100px;
+	border: 1px dashed var(--accent);
+	border-radius: 30px;
+}
+.header {
+	width: 100%;
+	margin-top: 100px;
+	text-align: center;
+	color: var(--accent);
+}
+.header h1 {
+	font-size: 45px;
+	/* padding-left: 100px; */
+	color: var(--accent);
+	text-shadow: 1px 1px 1px;
+}
+
+.service-section {
+	width: 80%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 100px;
+	margin-bottom: 50px;
+}
+
+.services {
+	width: 24%;
+	height: 350px;
+	padding: 50px;
+	border-radius: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	gap: 20px;
+	background-color: var(--accent);
+	overflow: scroll;
+	box-shadow: 31px 31px 34px #d0d0d0, -31px -31px 34px #ffffff;
+}
+.service-logo {
+	box-shadow: 12px 12px 24px #a16300;
+	background-color: whitesmoke;
+	border-radius: 10%;
+	padding: 20px;
+	width: 100px;
+	object-fit: cover;
+	object-position: center;
+}
+.service-info {
+	width: 100%;
+	/* height: 100%; */
+	vertical-align: middle;
+	color: white;
+	text-align: center;
+}
+
+/* Home button */
+.cta {
+	position: fixed;
+	bottom: 100px;
+	right: 100px;
+	margin-top: auto;
+	padding: 12px 18px;
+	transition: all 0.2s ease;
+	border: none;
+	background: #ffffff;
+	border-radius: 50px;
+	box-shadow: 8px 5px 12px 1px #0c0c0c32;
+}
+
+.cta:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	border-radius: 50px;
+	/* background: var(--accent); */
+	width: 45px;
+	height: 45px;
+	transition: all 0.3s ease;
+}
+
+.cta span {
+	position: relative;
+	font-family: "Ubuntu", sans-serif;
+	font-size: 18px;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	color: #234567;
+}
+
+.cta svg {
+	position: relative;
+	top: 0;
+	margin-left: 10px;
+	fill: none;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke: #234567;
+	stroke-width: 2;
+	transform: translateX(-5px);
+	transition: all 0.3s ease;
+}
+
+.cta:hover:before {
+	width: 100%;
+	background: var(--accent);
+}
+
+.cta:hover svg {
+	transform: translateX(0);
+	stroke: white;
+}
+
+.cta:active {
+	transform: scale(0.95);
+}
+.cta:hover span {
+	color: #ffffff;
+}
+.cta:hover {
+	cursor: pointer;
+}
+
