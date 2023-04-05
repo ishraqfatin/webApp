@@ -61,7 +61,7 @@ body {
 	align-items: center;
 	gap: 20px;
 	background-color: var(--accent);
-	overflow: scroll;
+	/* overflow: scroll; */
 	box-shadow: 31px 31px 34px #d0d0d0, -31px -31px 34px #ffffff;
 }
 .service-logo {
