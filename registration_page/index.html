@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
+		<title>Artistm Register</title>
 		<link rel="stylesheet" href="styles.css" />
 		<link
 			href="https://fonts.googleapis.com/css?family=Fraunces"
@@ -22,28 +22,20 @@
 				</section>
 				<section id="section-2">
 					<form id="login-form" action="submit" method="post">
-						<h1 id="header">Register your account</h1>
-						<section id="name">
-							<input
-								type="text"
-								name="fname"
-								id="fname"
-								placeholder="First Name*"
-								required
-							/>
-							<input
-								type="text"
-								name="lname"
-								id="lname"
-								placeholder="Last Name*"
-								required
-							/>
-						</section>
+						<h1 id="header">Registration</h1>
+
 						<input
 							type="text"
 							name="username"
 							id="username"
 							placeholder="Username*"
+							required
+						/>
+						<input
+							type="text"
+							name="pass"
+							id="pass"
+							placeholder="Password*"
 							required
 						/>
 						<input
@@ -55,11 +47,26 @@
 						/>
 						<input
 							type="text"
-							name="pass"
-							id="pass"
-							placeholder="Password*"
-							required
+							name="phone"
+							id="phone"
+							placeholder="Contact Number"
 						/>
+						<section id="name">
+							<input
+								type="date"
+								name="age"
+								id="age"
+								placeholder="Age*"
+								required
+							/>
+							<input
+								type="text"
+								name="occupation"
+								id="occupation"
+								placeholder="Occupation*"
+								required
+							/>
+						</section>
 						<button class="cta" type="submit">
 							<span>Register</span>
 							<svg viewBox="0 0 13 10" height="10px" width="15px">
