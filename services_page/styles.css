@@ -51,8 +51,9 @@ body {
 }
 
 .services {
-	width: 24%;
+	width: 34%;
 	height: 350px;
+	width: 350px;
 	padding: 50px;
 	border-radius: 30px;
 	display: flex;
@@ -87,7 +88,7 @@ body {
 	bottom: 100px;
 	right: 100px;
 	margin-top: auto;
-	padding: 12px 18px;
+	padding: 12px;
 	transition: all 0.2s ease;
 	border: none;
 	background: #ffffff;
@@ -148,5 +149,29 @@ body {
 }
 .cta:hover {
 	cursor: pointer;
+}
+
+@media screen and (max-width: 615px) {
+	.cta span {
+		font-size: 1rem;
+	}
+	.cta {
+		position: fixed;
+		bottom: 60px;
+		right: 20px;
+		padding: 8px;
+	}
+	.cta:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		border-radius: 50px;
+		/* background: var(--accent); */
+		width: 35px;
+		height: 35px;
+		transition: all 0.3s ease;
+	}
 }
 

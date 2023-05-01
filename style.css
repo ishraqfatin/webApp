@@ -1,174 +1,55 @@
 @import url("https://fonts.googleapis.com/css2?family=Bona+Nova:wght@400;700&family=Poppins:wght@200;300&display=swap");
 
-* {
-	font-family: "Bona Nova", serif;
-	font-family: "Poppins", sans-serif;
-	margin: 0;
-	padding: 0;
-	color: #172337;
-	transition: all ease 0.3s;
+:root {
+	--accent: #ff9f00;
+	--color1: #ff9f00;
+	--color2: #ffffff;
+	--border: #172337;
+	--bg-btn: #232c3b;
 }
 a {
 	text-decoration: none;
 	color: none;
 }
-button {
-	cursor: pointer;
+body {
+	overflow-x: hidden;
 }
-
-button:hover {
-	transform: translateY(-4px);
-}
-
-:root {
-	--color1: #ff9f00;
-	--border: #172337;
-	--bg-btn: #232c3b;
-}
-
-.body {
-	width: 1500px;
-	margin: auto;
-}
-
-li {
-	list-style-type: none;
-}
-
-.font-12 {
-	font-size: 12px;
-}
-
-.font-14 {
-	font-size: 14px;
-}
-
-.font-16 {
-	font-size: 16px;
-}
-
-.font-18 {
-	font-size: 18px;
-}
-
-.font-20 {
-	font-size: 20px;
-}
-
-.font-22 {
-	font-size: 22px;
-}
-
-.d-flex {
-	display: flex;
-}
-
-.align-center {
-	align-items: center;
-}
-
-.justify-space {
-	justify-content: space-between;
-}
-
-.nav_logo h2 {
-	padding-left: 100px;
-}
-
-.container h2 {
-	padding-left: 100px;
-}
-
-nav {
-	width: 100%;
-	height: 60px;
-	background: var(--color1);
-	align-items: center;
-	display: flex;
-}
-
 .navbar {
-	width: 1500px;
-	margin: auto;
-	display: grid;
-	grid-template-columns: 15% 65% 20%;
+	background-color: white;
+	/* margin-bottom: 50px; */
 }
 
-.input_search {
-	display: none;
-	padding: 8px 10px;
-	border: 1px solid #ccc;
-	max-width: 425px;
-	background: #fff;
-	border-radius: 50px;
-}
-
-.input_search input {
-	width: 100%;
-	border: none;
-	outline: none;
-}
-
-.nav_li {
-	width: 100%;
-	min-width: 650px;
-	padding-left: 300px;
-}
-
-.nav_li ul {
-	margin: auto;
-	width: 100%;
-	min-width: 650px;
-}
-
-.nav_li ul li:hover {
-	transform: translateY(-4px);
-}
-
-.nav_li ul li a {
+.logo {
+	font-family: "Fraunces";
+	font-size: 1.4rem;
+	font-weight: 300;
+	color: rgb(55, 55, 55);
+	letter-spacing: 4px;
 	text-decoration: none;
-	margin: 0 20px;
-	font-size: 16px;
 }
-
-#search {
-	font-size: 18px;
-	display: inline-flex;
-	background: #fff;
-	width: 40px;
-	height: 40px;
-	border-radius: 50%;
-	align-items: center;
-	justify-content: center;
-}
-
-.nav_btn button {
+#a1 {
+	font-size: 2rem;
 	font-weight: 900;
-	padding: 3px 20px;
-	background: var(--bg-btn);
-	border: 1.5px solid white;
-	color: #fff;
-	margin-left: 10px;
-	margin-top: 6px;
-	border-radius: 10px;
+	color: var(--accent);
 }
-
-.nav_btn button:first-child {
-	background: transparent;
-	color: #172337;
-}
-
-.container {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	height: 90%;
-	max-height: 950px;
-}
-
-.img,
-.img img {
+.welcome {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 50px;
+	height: calc(100vh - 90px);
 	width: 100%;
-	height: 100%;
+	margin: 0 auto;
+	padding: 0 100px;
+}
+.info {
+	width: 100%;
+}
+.welcome-img {
+	object-position: center;
+	object-fit: cover;
+	width: 50%;
 }
 
 .inner {
@@ -177,16 +58,14 @@ nav {
 
 .inner h1 {
 	font-size: 45px;
-	padding-left: 100px;
 	color: var(--color1);
 	text-shadow: 1px 1px 1px;
 }
 
 .inner p {
-	width: 80%;
+	width: 100%;
 	font-weight: 600;
 	margin: 10px 0;
-	padding-left: 100px;
 }
 
 .inner span {
@@ -198,32 +77,20 @@ nav {
 	border: 1px solid var(--border);
 	background: var(--color1);
 	font-size: 16px;
-	margin: 0px 100px;
 	border-radius: 50px;
 	font-weight: 600;
 	margin-top: 5px;
 }
 
-.products-overview {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	min-height: 500px;
-}
-
-.products-overview .img {
-	max-height: 70%;
-	max-width: 50%;
-	margin: 100px 100px;
-	background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
-}
-
-.inner img {
-	max-height: 70%;
-	max-width: 50%;
-	margin: 100px 100px;
-	background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
-}
-
-a {
-	text-decoration: none;
+@media screen and (max-width: 985px) {
+	.welcome {
+		flex-direction: column-reverse;
+		margin-bottom: 50px;
+	}
+	.info {
+		text-align: center;
+	}
+	.welcome-img {
+		width: 80%;
+	}
 }
