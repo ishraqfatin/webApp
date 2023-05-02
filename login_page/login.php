@@ -1,4 +1,32 @@
-<!DOCTYPE html>
+<?php
+include("../connect.php");
+session_start();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	// username and password sent from form 
+
+	$myusername = mysqli_real_escape_string($con, $_POST['username']);
+	$mypassword = mysqli_real_escape_string($con, $_POST['password']);
+
+	$sql = "SELECT userName FROM users WHERE userName = '$myusername' and password = '$mypassword'";
+	$result = mysqli_query($con, $sql);
+	$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+	$active = $row['active'];
+
+	$count = mysqli_num_rows($result);
+
+	// If result matched $myusername and $mypassword, table row must be 1 row
+
+	if ($count == 1) {
+		// session_register("myusername");
+		$_SESSION['login_user'] = $myusername;
+		$_SESSION["login_id"] = trim($row["userId"]);
+		header("location: ../index.php");
+	} else {
+		$error = "Your Login Name or Password is invalid";
+	}
+}
+?>
 <html lang="en">
 
 	<head>
@@ -19,7 +47,7 @@
 					</section>
 				</a>
 				<section id="section-2">
-					<form id="login-form" action="loginb.php" method="POST">
+					<form id="login-form" action="" method="POST">
 						<h1 id="header">Login</h1>
 						<input type="text" name="username" id="username" placeholder="Username" autocomplete="off" required />
 						<input type="text" name="password" id="password" placeholder="Password" required />

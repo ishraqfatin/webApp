@@ -1,0 +1,19 @@
+<?php
+while ($qq = mysqli_fetch_assoc($query)) {
+	echo '<div class="col">';
+	echo '<div class="card h-100">';
+	echo '<img class="card-img-top img-fluid" alt="Product Image" src="data:image/jpeg;base64,' . base64_encode($qq['productImage']) . '" />';
+	echo '<div class="card-body">';
+	echo '<h5 class="card-title">' . $qq['productName'] . '</h5>';
+	echo '<h6 class="card-subtitle mb-2 text-body-secondary">by' . $sql = "SELECT userName from users WHERE userId='" . $qq['userId'] . "'";
+	$query = mysqli_query($con, $sql);
+	$res = mysqli_fetch_array($query);
+	$res['userName'] . '</h6>';
+	echo "<h3>" . $qq['productName'] . "</h3>";
+	echo "<p>" . $qq['productDescription'] . "</p>";
+	echo "</div>";
+	echo "</div>";
+	// echo "<a href='artists.php?id=" . $row['id'] . "'>View Artist</a>";
+	echo "</div>";
+}
+?>

@@ -1,6 +1,7 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
+
 	$fname = $_POST['username'];
 	$password = $_POST['password'];
 	$confirmPassword = $_POST['confirm_password'];
@@ -17,32 +18,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		echo '<script>alert("Passwords do not match.")</script>';
 		// echo "Passwords do not match.";
 	} else {
-		/* Attempt MySQL server connection. Assuming you are running MySQL server with default setting (user 'root' with no password) */
-		$link = mysqli_connect("localhost", "root", "", "artismdb");
-		// Check connection
-		if ($link === false) {
-			die("ERROR: Could not connect. " . mysqli_connect_error());
-		}
+		include("../connect.php");
 		$verify = "SELECT * FROM users WHERE email='$email'";
-		$result = mysqli_query($link, $verify);
+		$result = mysqli_query($con, $verify);
 
 		if (mysqli_num_rows($result) > 0) {
-			echo '<script>alert("Email is already registered';
+			echo '<script>alert("Registration ERROR: Email is already registered.")</script>';
 
 		} else {
-			$sql = "INSERT INTO users (userName, password, email, contactNumber, age, occupation) VALUES ('$fname', '$password','$email','$phone','$age','$occupation')";
-			if (mysqli_query($link, $sql)) {
-				echo '<script>alert("Registration Successful")</script>';
-				// header("Location: index.html");
+			$sql = "INSERT INTO users (userName, password, email, contactNumber, dateOfBirth, occupation) VALUES ('$fname', '$password','$email','$phone','$age','$occupation')";
+			if (mysqli_query($con, $sql)) {
+				// header("Location: ../index.php");
+				echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+				Registration Successful!
+  			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>';
 				// exit();
 			} else {
-				echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+				echo "<script>alert('ERROR: Could not able to execute')</script> $sql. " . mysqli_error($con);
 			}
 		}
 		// Attempt insert query execution
 
 		// Close connection
-		mysqli_close($link);
+		// mysqli_close($con);
 	}
 }
 
@@ -54,6 +53,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Artistm Register</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+			integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 		<link rel="stylesheet" href="styles.css" />
 		<link href="https://fonts.googleapis.com/css?family=Fraunces" rel="stylesheet" type="text/css" />
 	</head>
@@ -62,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		<main id="main">
 			<div id="card">
 				<section id="section-1">
-					<a href="../index.php">
+					<a href="../index.php" class="link-underline-opacity-0">
 						<p class="logo"><span id="a1">ART</span>ism.</p>
 					</a>
 				</section>
@@ -85,12 +86,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 								<polyline points="8 1 12 5 8 9"></polyline>
 							</svg>
 						</button>
+						<p class="disclaimer"> Already a member? <a href="../login_page/login.php">Login</a>
+						</p>
 					</form>
-					<p class="disclaimer"> Already a member? <a href="../login_page/login.php">Login</a>
-					</p>
 				</section>
 			</div>
 		</main>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+			crossorigin="anonymous"></script>
 	</body>
 
 </html>
