@@ -19,10 +19,10 @@
 					</section>
 				</a>
 				<section id="section-2">
-					<form id="login-form" action="submit" method="post">
+					<form id="login-form" action="loginb.php" method="POST">
 						<h1 id="header">Login</h1>
-						<input type="text" name="name" id="name" placeholder="Username" autocomplete="off" required />
-						<input type="text" name="pass" id="pass" placeholder="Password" required />
+						<input type="text" name="username" id="username" placeholder="Username" autocomplete="off" required />
+						<input type="text" name="password" id="password" placeholder="Password" required />
 						<button class="cta" type="submit">
 							<span>Login</span>
 							<svg viewBox="0 0 13 10" height="10px" width="15px">
