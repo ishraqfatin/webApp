@@ -17,10 +17,11 @@ if (isset($_GET['search'])) {
 } elseif (isset($_GET['allArts'])) {
 	$sql = "select * from products as prod JOIN (select userName, userID from users)as users ON prod.userId = users.userId ORDER BY prod.createdAt DESC";
 	$result = mysqli_query($con, $sql);
-} elseif (isset($_GET['featuredArts']) || true) {
+} else {
 
 	$sql = "select * from products as prod JOIN (select userName, userID from users)as users ON prod.userId = users.userId ORDER BY prod.createdAt DESC LIMIT 5";
 	$result = mysqli_query($con, $sql);
+
 
 }
 ini_set('display_errors', 1);
@@ -76,82 +77,56 @@ ini_set('display_errors', 1);
 					</h2>
 				<?php } elseif (isset($_GET['allArts'])) { ?>
 					<h2 class="row justify-content-center">All Arts </h2>
-				<?php } elseif (isset($_GET['featuredArts']) || true) { ?>
+				<?php } else { ?>
 					<h2 class="row justify-content-center">Featured Arts </h2>
 				<?php } ?>
-				<div class="row row-cols-1 row-cols-md-4 g-2 p-2">
+				<div class="row row-cols-1 row-cols-md-4 g-2 justify-content-center">
 					<?php
-					while ($qq = mysqli_fetch_array($result)) {
-
-						?>
-						<div class="col">
-							<a href="" class="card-link">
-								<div class="card h-100">
-									<?php
-									echo '<img class="card-img-top img-fluid" alt="Product Image" src="' . $qq['productImage'] . '" />';
-									?>
-									<div class="card-body">
-										<h5 class="card-title">
-											<?php echo $qq['productName']; ?>
-										</h5>
-										<p class="card-subtitle mb-2 text-body-secondary">by<a href="#" class="name-link">
-												<?php
-												// $sql = "SELECT userName from users WHERE userId='" . $qq['userId'] . "'";
-												// $query = mysqli_query($con, $sql);
-												// $res = mysqli_fetch_array($query);
-												// echo $res['userName'];
+					if ($result) {
+						while ($qq = mysqli_fetch_array($result)) { ?>
+							<div class="col cardCol ">
+								<a href="" class="card-link">
+									<div class="card h-100">
+										<?php
+										echo '<img class="card-img-top img-fluid" alt="Product Image" src="' . $qq['productImage'] . '" />';
+										?>
+										<div class="card-body">
+											<h5 class="card-title">
+												<?php echo $qq['productName']; ?>
+											</h5>
+											<p class="card-subtitle mb-2 text-body-secondary">by<a href="#" class="name-link">
+													<?php
+													// $sql = "SELECT userName from users WHERE userId='" . $qq['userId'] . "'";
+													// $query = mysqli_query($con, $sql);
+													// $res = mysqli_fetch_array($query);
+													// echo $res['userName'];
 											
-												echo $qq['userName'];
-												?>
-											</a>
-										</p>
-										<p class="card-text">
-											<?php echo $qq['productDescription']; ?>
-										</p>
-										<p class="blockquote mb-0">BDT
-											<?php echo $qq['productPrice'] ?>
-										<p class="card-subtitle mb-2 text-body-secondary">In Stock:
-											<?php echo $qq['productQuantity'] ?>
-										</p>
-										</p>
-										<a href="#" class="btn btn-info order-btn">Order</a>
+													echo $qq['userName'];
+													?>
+												</a>
+											</p>
+											<p class="card-text">
+												<?php echo $qq['productDescription']; ?>
+											</p>
+											<p class="blockquote mb-0">BDT
+												<?php echo $qq['productPrice'] ?>
+											<p class="card-subtitle mb-2 text-body-secondary">In Stock:
+												<?php echo $qq['productQuantity'] ?>
+											</p>
+											</p>
+											<a href="#" class="btn btn-info order-btn">Order</a>
+										</div>
 									</div>
-								</div>
-							</a>
-						</div>
-						<?php
+								</a>
+							</div>
+							<?php
 
+						}
+					} else {
+						echo '<p class="card-subtitle mb-2 text-body-secondary">No results found</p>';
 					}
+
 					?>
-					<!-- <div class="col">
-						<div class="card h-100">
-							<img src="./assets/product3.png" class="card-img-top" alt="...">
-							<div class="card-body">
-								<h5 class="card-title">Card title</h5>
-								<p class="card-text">This is a short card.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col">
-						<div class="card h-100">
-							<img src="./assets/product3.png" class="card-img-top" alt="...">
-							<div class="card-body">
-								<h5 class="card-title">Card title</h5>
-								<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-									content.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col">
-						<div class="card h-100">
-							<img src="./assets/product3.png" class="card-img-top" alt="...">
-							<div class="card-body">
-								<h5 class="card-title">Card title</h5>
-								<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-									content. This content is a little bit longer.</p>
-							</div>
-						</div>
-					</div> -->
 				</div>
 			</div>
 		</div>

@@ -28,7 +28,7 @@
 			if ($query) {
 				while ($row = mysqli_fetch_array($query)) { ?>
 					<div class="container" style="margin-top:20px">
-						<h2>Add Product</h2>
+						<h2>Update Information</h2>
 						<form action="" method="post" enctype="multipart/form-data">
 							<input type="hidden" name="id" value="<?php echo $row['productId'] ?>">
 							<div class="form-group">
@@ -51,7 +51,7 @@
 								<label for="price">Product Price:</label>
 								<div class="input-group mb-3">
 									<div class="input-group-prepend">
-										<span class="input-group-text">$</span>
+										<span class="input-group-text">BDT</span>
 									</div>
 									<input type="number" class="form-control" id="price" name="price" min="0.01" step="0.01"
 										value="<?php echo $row['productPrice'] ?>" required>
@@ -62,7 +62,7 @@
 								<input type="number" class="form-control" id="quantity" name="quantity" min="1"
 									value="<?php echo $row['productQuantity'] ?>" required>
 							</div>
-							<button type="submit" class="btn btn-primary" name="update">Update Product</button>
+							<button type="submit" class="btn btn-primary" name="update">Update</button>
 							<a href="./myGallery.php" class="btn btn-danger">Cancel</a>
 						</form>
 					</div>

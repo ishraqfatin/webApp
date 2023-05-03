@@ -5,7 +5,7 @@ session_start();
 // if (!isset($_SESSION['login_user'])) {
 // 	$login_session = "Guest";
 // } else {
-
+// if (isset($_SESSION['login_user'])) {
 $userName = $_SESSION['login_user'];
 // $userId = $_SESSION['login_id'];
 $ses_sql = mysqli_query($con, "select userId, userName from users where userName = '$userName'");

@@ -25,7 +25,7 @@
 				<div class="collapse navbar-collapse justify-content-between " id="navbarSupportedContent">
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="./index.php">Home</a>
+							<a class="nav-link active" aria-current="page" href="./index.php#gallery">Home</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="./services_page/services.html">Services</a>
@@ -35,11 +35,6 @@
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="./myGallery.php">My Gallery</a>
-						</li>
-						<li class="nav-item">
-							<form method="get" action="./index.php#gallery">
-								<button class="nav-link" type="submit" name="featuredArts">Featured Arts</button>
-							</form>
 						</li>
 						<li class="nav-item">
 							<form method="get" action="./index.php#gallery">

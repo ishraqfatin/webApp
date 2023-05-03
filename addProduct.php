@@ -124,7 +124,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					<label for="price">*Product Price:</label>
 					<div class="input-group mb-3">
 						<div class="input-group-prepend">
-							<span class="input-group-text">$</span>
+							<span class="input-group-text">BDT</span>
 						</div>
 						<input type="number" class="form-control" id="price" name="price" min="0.01" step="0.01" required>
 					</div>
