@@ -1,5 +1,5 @@
 <?php
-include('session.php');
+include 'session.php';
 
 if (!isset($_SESSION['login_user']) || empty($_SESSION['login_user'])) {
 	header("Location: ./login_page/login.php");
@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$description = $_POST["description"];
 	$price = $_POST["price"];
 	$quantity = $_POST["quantity"];
-	$userId = $_SESSION['login_id'];
+	$userId = $login_id;
 
 	// Check if the image file is valid and move it to the server
 	$target_dir = "./uploads/";
@@ -28,13 +28,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		if ($check !== false) {
 			$uploadOk = 1;
 		} else {
-			echo "File is not an image.";
+			echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+			File is not an image.
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>';
 			$uploadOk = 0;
 		}
 	}
 	// Check file size
 	if ($image["size"] > 20000000) {
-		echo "Sorry, your file is too large.";
+		echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+		Sorry, file is too large.
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>';
 		$uploadOk = 0;
 	}
 	// Allow certain file formats
@@ -42,15 +48,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
 		&& $imageFileType != "gif"
 	) {
-		echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+		echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+		Sorry, only JPG, JPEG, PNG & GIF files are allowed.
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>';
 		$uploadOk = 0;
 	}
 	if ($uploadOk == 0) {
-		echo "Sorry, your file was not uploaded.";
+		echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+		Sorry, your file was not uploaded.
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>';
 		// if everything is ok, try to upload file
 	} else {
 		if (move_uploaded_file($image["tmp_name"], $target_file)) {
-			echo "The file " . basename($image["name"]) . " has been uploaded.";
+			echo '<div class="alert alert-info alert-dismissible fade show" role="alert">
+			The file ' . basename($image["name"]) . ' has been uploaded.
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>';
+
 		} else {
 			echo "Sorry, there was an error uploading your file.";
 		}
@@ -58,10 +74,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 	// Insert the product into the database
 	$sql = "INSERT INTO products (productName, productImage, productDescription, productPrice, productQuantity, userId)
-	VALUES ('$name', '$target_file', '$description', '$price', '$quantity', '1' )";
+	VALUES ('$name', '$target_file', '$description', '$price', '$quantity', $userId )";
 	if ($con->query($sql) === TRUE) {
-		echo "New product created successfully";
-		echo $target_file;
+		echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+		Product Uploaded Successfully!
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>';
+
 	} else {
 		echo "Error: " . $sql . "<br>" . $con->error;
 	}
@@ -80,6 +99,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="style.css">
 	</head>
 
 	<body>
@@ -88,20 +108,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			<h2>Add Product</h2>
 			<form action="" method="post" enctype="multipart/form-data">
 				<div class="form-group">
-					<label for="name">Product Name:</label>
+					<label for="name">*Product Name:</label>
 					<input type="text" class="form-control" id="name" name="name" required>
 				</div>
 				<div class="form-group">
-					<label for="image">Product Image:</label>
-					<input type="file" class="form-control-file" id="image" name="image" accept="image/*" required>
+					<label for="image">*Product Image:</label>
+					<input type="file" class=" form-control-file" id="image" name="image" accept="image/*" required>
 					<small class="form-text text-muted">File size must be less than 20 MB.</small>
 				</div>
 				<div class="form-group">
-					<label for="description">Product Description:</label>
+					<label for="description">*Product Description:</label>
 					<textarea class="form-control" id="description" name="description" rows="5" required></textarea>
 				</div>
 				<div class="form-group">
-					<label for="price">Product Price:</label>
+					<label for="price">*Product Price:</label>
 					<div class="input-group mb-3">
 						<div class="input-group-prepend">
 							<span class="input-group-text">$</span>
@@ -110,10 +130,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="quantity">Product Quantity:</label>
+					<label for="quantity">*Product Quantity:</label>
 					<input type="number" class="form-control" id="quantity" name="quantity" min="1" required>
 				</div>
-				<button type="submit" class="btn btn-primary">Submit</button>
+				<button type="submit" class="btn btn-info">Add This Product</button>
 			</form>
 		</div>
 	</body>

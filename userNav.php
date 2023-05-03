@@ -15,7 +15,7 @@
 		<!--NAVIGATION BAR-->
 		<nav class="navbar sticky-top navbar-expand-lg shadow-sm rounded">
 			<div class="container-fluid px-5">
-				<a class="navbar-brand" href="#">
+				<a class="navbar-brand" href="./index.php">
 					<p class="logo"><span id="a1">ART</span>ism.</p>
 				</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -23,7 +23,7 @@
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse justify-content-between " id="navbarSupportedContent">
-					<ul class="navbar-nav">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 						<li class="nav-item">
 							<a class="nav-link active" aria-current="page" href="./index.php">Home</a>
 						</li>
@@ -31,24 +31,32 @@
 							<a class="nav-link" href="./services_page/services.html">Services</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="./addProduct.php">Products</a>
+							<a class="nav-link" href="./addProduct.php">Upload</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="./index.php#gallery">Featured Arts</a>
+							<a class="nav-link" href="./myGallery.php">My Gallery</a>
+						</li>
+						<li class="nav-item">
+							<form method="get" action="./index.php#gallery">
+								<button class="nav-link" type="submit" name="featuredArts">Featured Arts</button>
+							</form>
+						</li>
+						<li class="nav-item">
+							<form method="get" action="./index.php#gallery">
+								<button class="nav-link" type="submit" name="allArts">All Arts</button>
+							</form>
 						</li>
 					</ul>
 					<form class="d-flex" role="search" action="" method="get">
 						<input class="form-control me-2" type="text" id="search" name="search">
 						<button class="btn btn-outline-warning" type="submit">Search</button>
 					</form>
-					<h2 class="welcome-nav">Welcome, <span>
-							<?php echo $login_id;
+					<a class="btn btn-warning custom-btn " style="margin-left:30px" href="./logout.php">Logout</a>
+					<a class="btn btn-outline-success" style="margin-bottom:8px; margin-left:10px" href="">Welcome, <span>
+							<?php echo $login_session;
 							?>
 						</span>
-					</h2>
-					<div class="d-flex">
-						<a class="btn btn-warning logout-btn" href="./logout.php">Logout</a>
-					</div>
+					</a>
 				</div>
 			</div>
 		</nav>

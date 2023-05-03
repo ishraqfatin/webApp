@@ -11,8 +11,12 @@ a {
 	text-decoration: none;
 	color: none;
 }
-body {
+.main {
 	overflow-x: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 .navbar {
 	background-color: white;
@@ -94,7 +98,7 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	max-width: 1080px;
+	/* max-width: 1080px; */
 	margin: 50px auto;
 }
 
@@ -102,6 +106,8 @@ body {
 
 .card {
 	transition: 0.3s;
+	max-width: 500px;
+	margin: 0 auto;
 }
 /* .card:hover {
 	transform: scale(1.02);
@@ -147,11 +153,18 @@ body {
 /* .logout-btn { */
 /* margin-left: 8px; */
 /* } */
+.custom-btn {
+	background-color: var(--accent);
+	margin-bottom: 8px;
+	margin-left: 5px;
+}
 
 @media screen and (max-width: 985px) {
 	.welcome {
 		flex-direction: column-reverse;
+		height: 100%;
 		margin-bottom: 50px;
+		padding: 10px;
 	}
 	.info {
 		text-align: center;

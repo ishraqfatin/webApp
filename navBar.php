@@ -15,14 +15,14 @@
 		<!--NAVIGATION BAR-->
 		<nav class="navbar sticky-top navbar-expand-lg shadow-sm rounded">
 			<div class="container-fluid px-5">
-				<a class="navbar-brand" href="#">
+				<a class="navbar-brand" href="">
 					<p class="logo"><span id="a1">ART</span>ism.</p>
 				</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
 					aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 						<li class="nav-item">
 							<a class="nav-link active" aria-current="page" href="#">Home</a>
@@ -31,28 +31,37 @@
 							<a class="nav-link" href="./services_page/services.html">Services</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Products</a>
+							<!-- <a class="nav-link" href="./index.php#gallery">Products</a> -->
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#gallery">Featured Arts</a>
+							<form method="get">
+								<button class="nav-link" type="submit" name="featuredArts">Featured Arts</button>
+							</form>
 						</li>
-						<li class="nav-item dropdown">
+						<li class="nav-item">
+							<form method="get">
+								<button class="nav-link" type="submit" name="allArts">All Arts</button>
+							</form>
+						</li>
+						<!-- <li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
 								aria-expanded="false"> More </a>
 							<ul class="dropdown-menu">
 								<li><a class="dropdown-item" href="./login_page/login.php">Login</a></li>
 								<li><a class="dropdown-item" href="./registration_page/registration.php">Register</a></li>
-								<!-- <li>
+								<li>
 									<hr class="dropdown-divider">
 								</li>
-								<li><a class="dropdown-item" href="#">Something else here</a></li> -->
+								<li><a class="dropdown-item" href="#">Something else here</a></li>
 							</ul>
-						</li>
+						</li> -->
 					</ul>
-					<form class="d-flex" role="search" action="" method="get">
+					<form class="d-flex " style="gap:5px" role="search" action="" method="get">
 						<input class="form-control me-2" type="text" id="search" name="search">
 						<button class="btn btn-outline-warning" type="submit">Search</button>
 					</form>
+					<a class="btn btn-warning custom-btn " style="margin-left:30px" href="./login_page/login.php">Login</a>
+					<a class="btn btn-warning custom-btn" href="./registration_page/registration.php">Register</a>
 				</div>
 			</div>
 		</nav>

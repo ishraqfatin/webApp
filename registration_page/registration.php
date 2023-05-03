@@ -15,7 +15,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	// Form validation
 	if ($password != $confirmPassword) {
-		echo '<script>alert("Passwords do not match.")</script>';
+		echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+		Passwords do not match!
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>';
 		// echo "Passwords do not match.";
 	} else {
 		include("../connect.php");
@@ -23,7 +26,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$result = mysqli_query($con, $verify);
 
 		if (mysqli_num_rows($result) > 0) {
-			echo '<script>alert("Registration ERROR: Email is already registered.")</script>';
+			echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+			Email already exists!
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>';
 
 		} else {
 			$sql = "INSERT INTO users (userName, password, email, contactNumber, dateOfBirth, occupation) VALUES ('$fname', '$password','$email','$phone','$age','$occupation')";
