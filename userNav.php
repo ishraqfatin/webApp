@@ -47,7 +47,8 @@
 						<button class="btn btn-outline-warning" type="submit">Search</button>
 					</form>
 					<a class="btn btn-warning custom-btn " style="margin-left:30px" href="./logout.php">Logout</a>
-					<a class="btn btn-outline-success" style="margin-bottom:8px; margin-left:10px" href="">Welcome, <span>
+					<a class="btn btn-outline-success" style="margin-bottom:8px; margin-left:10px" href="./dashboard.php">Welcome,
+						<span>
 							<?php echo $login_session;
 							?>
 						</span>

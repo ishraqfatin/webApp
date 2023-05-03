@@ -121,14 +121,15 @@ a {
 }
 .card-img-top {
 	width: 100%;
-	height: 30vh;
+	height: 50vh;
 	object-fit: cover;
 }
+
 .card-text {
 	border: 1px dashed rgba(0, 0, 0, 0.24);
 	border-radius: 5px;
 	padding: 10px;
-	height: 200px;
+	height: 90px;
 	overflow-y: scroll;
 }
 .order-btn {
@@ -147,6 +148,8 @@ a {
 	border-radius: 5px;
 	text-align: center;
 	transition: 0.2s;
+	background-color: white;
+	border: none;
 }
 .name-link:hover {
 	background-color: #172337cd;

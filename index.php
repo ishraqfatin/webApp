@@ -75,12 +75,12 @@ ini_set('display_errors', 1);
 					<h2 class="row justify-content-center">Results for "
 						<?php echo $searchTerm ?>"
 					</h2>
-				<?php } elseif (isset($_GET['allArts'])) { ?>
+				<?php } elseif (isset($_GET['allArts']) && $result) { ?>
 					<h2 class="row justify-content-center">All Arts </h2>
-				<?php } else { ?>
+				<?php } elseif ($result) { ?>
 					<h2 class="row justify-content-center">Featured Arts </h2>
 				<?php } ?>
-				<div class="row row-cols-1 row-cols-md-4 g-2 justify-content-center">
+				<div class="row row-cols p-2 justify-content-center">
 					<?php
 					if ($result) {
 						while ($qq = mysqli_fetch_array($result)) { ?>
@@ -94,16 +94,11 @@ ini_set('display_errors', 1);
 											<h5 class="card-title">
 												<?php echo $qq['productName']; ?>
 											</h5>
-											<p class="card-subtitle mb-2 text-body-secondary">by<a href="#" class="name-link">
-													<?php
-													// $sql = "SELECT userName from users WHERE userId='" . $qq['userId'] . "'";
-													// $query = mysqli_query($con, $sql);
-													// $res = mysqli_fetch_array($query);
-													// echo $res['userName'];
-											
-													echo $qq['userName'];
-													?>
-												</a>
+											<p class="card-subtitle mb-2 text-body-secondary">
+											<form action="dashboard.php" method="post">
+												<input type="hidden" name="id" value="<?php echo $qq['userId'] ?>"> by<input class="name-link"
+													type="submit" name="nameTag" value="<?php echo $qq['userName']; ?>">
+											</form>
 											</p>
 											<p class="card-text">
 												<?php echo $qq['productDescription']; ?>

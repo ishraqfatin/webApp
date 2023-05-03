@@ -21,7 +21,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		// session_register("myusername");
 		$_SESSION['login_user'] = $myusername;
 		$_SESSION["login_id"] = trim($row["userId"]);
-		header("location: ../index.php");
+		if ($_SESSION['login_user'] == "admin") {
+			header("location: ../admin.php");
+		} else {
+			header("location: ../index.php");
+		}
 	} else {
 		$error = "Your Login Name or Password is invalid";
 	}

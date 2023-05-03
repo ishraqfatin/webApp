@@ -61,7 +61,7 @@ if (isset($_GET['search'])) {
 				?>
 				<h2 class="row justify-content-center">My Arts</h2>
 			<?php } ?>
-			<div class="row row-cols-1 row-cols-md-4 g-2 p-2 justify-content-center">
+			<div class="row row-cols p-2 justify-content-center">
 				<?php
 				while ($qq = mysqli_fetch_array($result)) {
 
