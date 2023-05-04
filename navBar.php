@@ -39,7 +39,7 @@
 							</form>
 						</li>
 					</ul>
-					<form class="d-flex " style="gap:5px" role="search" action="" method="get">
+					<form class="d-flex " style="gap:5px" role="search" action="#gallery" method="get">
 						<input class="form-control me-2" type="text" id="search" name="search">
 						<button class="btn btn-outline-warning" type="submit">Search</button>
 					</form>

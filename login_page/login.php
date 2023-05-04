@@ -25,9 +25,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			header("location: ../admin.php");
 		} else {
 			header("location: ../index.php");
+
 		}
 	} else {
-		$error = "Your Login Name or Password is invalid";
+		echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+		Password or Username does not match
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>';
 	}
 }
 ?>
@@ -38,6 +42,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Artism Login</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+			integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 		<link rel="stylesheet" href="styles.css" />
 		<link href="https://fonts.googleapis.com/css?family=Fraunces" rel="stylesheet" type="text/css" />
 	</head>
@@ -70,5 +76,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			</div>
 		</main>
 	</body>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+		crossorigin="anonymous"></script>
 
 </html>

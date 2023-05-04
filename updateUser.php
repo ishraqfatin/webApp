@@ -102,7 +102,8 @@
 			$occupation = $_POST['occupation'];
 			$bio = $_POST["bio"];
 			$social = $_POST['social'];
-			$image = $_FILES["image"];
+			$image_spacerm = str_replace(" ", "_", $_FILES["image"]);
+			$image = str_replace("'", "_", $image_spacerm);
 
 
 			// Check if the image file is valid and move it to the server

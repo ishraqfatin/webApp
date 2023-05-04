@@ -85,7 +85,7 @@ ini_set('display_errors', 1);
 					if ($result) {
 						while ($qq = mysqli_fetch_array($result)) { ?>
 							<div class="col cardCol ">
-								<a href="" class="card-link">
+								<a href="productPage.php?id= <?php echo $qq['productId'] ?> " class="card-link">
 									<div class="card h-100">
 										<?php
 										echo '<img class="card-img-top img-fluid" alt="Product Image" src="' . $qq['productImage'] . '" />';
