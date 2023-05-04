@@ -10,15 +10,15 @@
 
 ### Team Members:
 
-- [1911116](https://gitHub.com/RHShihab) - Fatin Ishraq Ahammed
-- [1910018](https://github.com/samuelmuabia) - Mst Aroni Begum
-- [2030486](https://github.com/ashfaqfardin) - Hasin Eshrak
+- [1911116](https://github.com/ishraqfatin) - Fatin Ishraq Ahammed
+- [1910018](https://github.com/Aronib) - Mst Aroni Begum
+- [2030486](https://github.com/hasin-eshrak) - Hasin Eshrak
 
 <hr>
 
 ## Demo Video:
 
-[https://youtu.be/h2LSbSq9JLM](https://youtu.be/h2LSbSq9JLM)
+
 
 <hr>
 
