@@ -95,6 +95,11 @@ if ($stmt = $con->prepare($sql)) {
 									<input type="hidden" name="id" value="<?php echo $param_id ?>">
 									<input type="submit" class="btn btn-dark" name="edit" value="Edit">
 								</form>
+								<form action="orderList.php" method="post" class="mt-5">
+									<input type="hidden" name="id" value="<?php echo $param_id ?>">
+									<input type="submit" class="btn btn-warning custom-btn " style="margin-left: 0px; margin-bottom: 0px;"
+										name="orders" value="Orders">
+								</form>
 							<?php }
 							?>
 						</div>

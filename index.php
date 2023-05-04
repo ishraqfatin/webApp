@@ -24,7 +24,7 @@ if (isset($_GET['search'])) {
 
 
 }
-ini_set('display_errors', 1);
+// ini_set('display_errors', 1);
 
 
 ?>
@@ -85,7 +85,7 @@ ini_set('display_errors', 1);
 					if ($result) {
 						while ($qq = mysqli_fetch_array($result)) { ?>
 							<div class="col cardCol ">
-								<a href="productPage.php?id= <?php echo $qq['productId'] ?> " class="card-link">
+								<a href="" class="card-link">
 									<div class="card h-100">
 										<?php
 										echo '<img class="card-img-top img-fluid" alt="Product Image" src="' . $qq['productImage'] . '" />';
@@ -106,10 +106,18 @@ ini_set('display_errors', 1);
 											<p class="blockquote mb-0">BDT
 												<?php echo $qq['productPrice'] ?>
 											<p class="card-subtitle mb-2 text-body-secondary">In Stock:
-												<?php echo $qq['productQuantity'] ?>
+												<?php echo $qq['productQuantity'];
+												echo $qq['productId']; ?>
 											</p>
 											</p>
-											<a href="#" class="btn btn-info order-btn">Order</a>
+											<?php if ($qq['userId'] != $login_id) {
+
+												echo '<form action="order.php" method="post">
+												<input type="hidden" name="productId" value="' . $qq['productId'] . '">
+												<input type="hidden" name="userId" value="<?php echo $login_id; ?>">
+												<button type="submit" class="btn btn-info order-btn" name="order">Order</button>
+											</form>';
+											} ?>
 										</div>
 									</div>
 								</a>
