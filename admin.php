@@ -45,7 +45,7 @@
 							echo "<td>" . $row["contactNumber"] . "</td>";
 							echo "<td>" . $row["dateOfBirth"] . "</td>";
 							echo "<td>" . $row["occupation"] . "</td>";
-							echo "<td><a href='deleteUser.php?id=" . $row["id"] . "' class='btn btn-danger'>Delete</a></td>";
+							echo "<td><a href='deleteUser.php?id=" . $row["userId"] . "' class='btn btn-danger'>Delete</a></td>";
 							echo "</tr>";
 						}
 					} else {

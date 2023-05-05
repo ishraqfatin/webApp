@@ -234,7 +234,14 @@ if ($stmt = $con->prepare($sql)) {
 													<input type="submit" class="btn btn-dark" name="edit" value="Edit">
 												</form>
 											<?php } else { ?>
-												<a href="#" class="btn btn-info order-btn">Order</a>
+												<?php if ($qq['userId'] != $login_id) {
+
+													echo '<form action="order.php" method="post">
+<input type="hidden" name="productId" value="' . $qq['productId'] . '">
+<input type="hidden" name="userId" value="<?php echo $login_id; ?>">
+<button type="submit" class="btn btn-info order-btn" name="order">Order</button>
+</form>';
+												} ?>
 											<?php } ?>
 										</div>
 									</div>

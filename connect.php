@@ -2,9 +2,9 @@
 /* Find Mistakes in your code or Database connection */
 /* Enable Show Errors From Apache Server */
 /* Try Debugging */
-// ini_set('display_errors', 1);
-// ini_set('display_startup_errors', 1);
-// error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 /* Check Your .htaccess for errors try emptying it for a while */
 // 1
 // http error 500 - php filePHP By LoneWolf_sage on Mar 17 2022 DonateThankCommentSuggest EditShare

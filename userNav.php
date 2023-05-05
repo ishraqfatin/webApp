@@ -35,9 +35,9 @@
 						<li class="nav-item">
 							<a class="nav-link" href="./addProduct.php">Upload</a>
 						</li>
-						<li class="nav-item">
+						<!-- <li class="nav-item">
 							<a class="nav-link" href="./myGallery.php">My Gallery</a>
-						</li>
+						</li> -->
 						<li class="nav-item">
 							<form method="get" action="./index.php#gallery">
 								<button class="nav-link" type="submit" name="allArts">All Arts</button>

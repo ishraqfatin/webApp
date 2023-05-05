@@ -79,7 +79,7 @@ if (isset($_POST['submit'])) {
 					<textarea class="form-control" id="shipping_address" name="shipping_address" required></textarea>
 				</div>
 				<button type="submit" class="btn btn-info" name="submit">Place Order</button>
-				<a href="products.php" class="btn btn-secondary">Back to Products</a>
+				<a href="index.php" class="btn btn-secondary">Back to Products</a>
 			</form>
 		</div>
 	</body>
